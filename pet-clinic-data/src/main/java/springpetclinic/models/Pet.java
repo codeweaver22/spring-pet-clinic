@@ -1,4 +1,4 @@
-package com.codeweaver.springpetclinic.models;
+package springpetclinic.models;
 
 import java.time.LocalDate;
 
