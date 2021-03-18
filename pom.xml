@@ -15,7 +15,7 @@
     </parent>
     <groupId>com.codeweaver</groupId>
     <artifactId>spring-pet-clinic</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>Spring Pet Clinic Project</name>
     <description>Spring Pet Clinic Project</description>
     <properties>
