@@ -1,4 +1,4 @@
-package springpetclinic.models;
+package com.codeweaver.springpetclinic.models;
 
 public class Person {
 
