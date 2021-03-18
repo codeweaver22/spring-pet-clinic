@@ -1,6 +1,6 @@
 package com.codeweaver.springpetclinic.models;
 
-public class PetType {
+public class PetType extends BaseEntity {
     private String name;
 
     public String getName() {
