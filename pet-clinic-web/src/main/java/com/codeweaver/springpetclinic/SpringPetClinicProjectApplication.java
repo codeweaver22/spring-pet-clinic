@@ -1,4 +1,4 @@
-package springpetclinic;
+package com.codeweaver.springpetclinic;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
