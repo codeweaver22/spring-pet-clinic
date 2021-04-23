@@ -1,7 +1,6 @@
 package com.codeweaver.springpetclinic.services.map;
 
 import com.codeweaver.springpetclinic.models.Vet;
-import com.codeweaver.springpetclinic.services.CrudService;
 import com.codeweaver.springpetclinic.services.VetService;
 import org.springframework.stereotype.Service;
 
