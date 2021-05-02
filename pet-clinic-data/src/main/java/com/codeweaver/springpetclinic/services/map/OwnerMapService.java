@@ -5,17 +5,19 @@ import com.codeweaver.springpetclinic.models.Pet;
 import com.codeweaver.springpetclinic.services.OwnerService;
 import com.codeweaver.springpetclinic.services.PetService;
 import com.codeweaver.springpetclinic.services.PetTypeService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
+@Profile({"default","map"})
+public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerService {
 
     private final PetTypeService petTypeService;
     private final PetService petService;
 
-    public OwnerServiceMap(PetTypeService petTypeService, PetService petService) {
+    public OwnerMapService(PetTypeService petTypeService, PetService petService) {
         this.petTypeService = petTypeService;
         this.petService = petService;
     }
@@ -32,11 +34,13 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
 
     @Override
     public void delete(Owner object) {
+        System.out.println("Map Service ---- Delete");
         super.delete(object);
     }
 
     @Override
     public Owner save(Owner object) {
+        System.out.println("Map Service ---- Save");
         if (object != null) {
             if (object.getPets() != null) {
                 object.getPets().forEach(pet -> {

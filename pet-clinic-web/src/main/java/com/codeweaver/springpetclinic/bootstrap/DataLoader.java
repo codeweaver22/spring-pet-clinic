@@ -1,14 +1,7 @@
 package com.codeweaver.springpetclinic.bootstrap;
 
 import com.codeweaver.springpetclinic.models.*;
-import com.codeweaver.springpetclinic.services.OwnerService;
-import com.codeweaver.springpetclinic.services.PetTypeService;
-import com.codeweaver.springpetclinic.services.SpecialitiesService;
-import com.codeweaver.springpetclinic.services.VetService;
-import com.codeweaver.springpetclinic.services.map.OwnerServiceMap;
-import com.codeweaver.springpetclinic.services.map.PetTypeMapService;
-import com.codeweaver.springpetclinic.services.map.SpecialityServiceMap;
-import com.codeweaver.springpetclinic.services.map.VetServiceMap;
+import com.codeweaver.springpetclinic.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -20,12 +13,14 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialitiesService specialitiesService;
+    private final VisitService visitService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialitiesService specialitiesService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialitiesService specialitiesService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialitiesService = specialitiesService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -91,6 +86,12 @@ public class DataLoader implements CommandLineRunner {
         ownerService.save(owner2);
 
         System.out.println("Loaded Owners...");
+
+        Visit catVisit = new Visit();
+        catVisit.setDescription("Sneezy Cat");
+        catVisit.setPet(fionaPet);
+        catVisit.setDate(LocalDate.now());
+        visitService.save(catVisit);
 
         Vet vet1 = new Vet();
         vet1.setFirstName("Sam");
