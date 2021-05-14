@@ -1,23 +1,11 @@
 package com.codeweaver.springpetclinic.controllers;
 
+import com.codeweaver.springpetclinic.models.Owner;
 import com.codeweaver.springpetclinic.models.Pet;
 import com.codeweaver.springpetclinic.models.PetType;
 import com.codeweaver.springpetclinic.services.OwnerService;
 import com.codeweaver.springpetclinic.services.PetService;
 import com.codeweaver.springpetclinic.services.PetTypeService;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-
-import static org.junit.jupiter.api.Assertions.*;
-
-import com.codeweaver.springpetclinic.models.Owner;
-import com.codeweaver.springpetclinic.services.OwnerService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -28,11 +16,9 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-import static org.hamcrest.Matchers.*;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
